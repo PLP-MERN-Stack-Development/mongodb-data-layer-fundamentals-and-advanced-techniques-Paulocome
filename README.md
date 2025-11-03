@@ -1,59 +1,85 @@
-# MongoDB Fundamentals - Week 1
+ ## Description
 
-## Setup Instructions
+This repository contains the implementation of the exercise **Week 1: MongoDB – Data Layer Fundamentals and Advanced Techniques**.  
+The goal is to demonstrate the use of **CRUD operations**, **aggregation pipelines**, **indexing**, and **advanced queries** using MongoDB.
 
-Before you begin this assignment, please make sure you have the following installed:
+The database used is called `plp_bookstore` and contains a collection named `books`, which stores information about various books.
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+---
 
-### Node.js Package Setup
+## Repository Structure
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+- `insert_books.js` – Script to populate the `books` collection with 12 sample books.  
+- `queries.js` – Script containing all MongoDB queries for the exercise tasks (basic CRUD, advanced queries, aggregation, and indexing).  
+- `README.md` – This file, explaining how to run the scripts.  
+- `screenshot.png` – Screenshot of MongoDB Compass or Atlas showing the `books` collection.
 
-```bash
-# Initialize a package.json file
-npm init -y
-
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
-
-## Assignment Overview
-
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
-
-## Submission
-
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
-
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+---
 
 ## Requirements
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+- Node.js installed (v14+ recommended)  
+- MongoDB Community Edition or a MongoDB Atlas account  
+- MongoDB Compass or MongoDB Shell (`mongosh`) is optional for visual verification  
 
-## Resources
+---
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+## How to Run
+
+### 1. Clone the Repository
+
+```bash
+git clone <REPOSITORY_URL>
+cd <REPOSITORY_NAME>
+
+ 2. Install Dependencies
+npm install mongodb
+
+3. Populate the Collection
+
+Run the insert_books.js script to create the database and insert sample books:
+
+node insert_books.js
+
+This script will:
+
+Connect to MongoDB
+
+Create the plp_bookstore database and books collection
+
+Insert 12 sample books
+
+Drop the collection if it already exists to avoid duplication
+
+Display all inserted books in the console
+
+4. Run Queries
+
+Run the queries.js script:
+node queries.js
+
+node queries.js
+This script performs:
+
+Basic CRUD operations (find, update, delete)
+
+Advanced queries (filtering, projection, sorting, pagination)
+
+Aggregation pipelines (average price by genre, author with the most books, count by decade)
+
+Index creation (title and compound index author + published_year)
+
+Performance demonstration using explain()
+
+Notes
+
+For MongoDB Atlas users, replace the URI at the beginning of the scripts (uri) with the connection string provided by Atlas.
+
+All scripts were tested locally on MongoDB Community Edition v6.0+.
+
+Example Screenshot
+
+Replace screenshot.png with a screenshot of MongoDB Compass or Atlas showing the books collection and some documents.
+
+
+
